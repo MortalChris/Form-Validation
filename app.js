@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const usernameInput = username.value.trim();
     
         if (usernameInput === "" || usernameInput === null) {
-            
-                console.log("no worky");
+                
+                console.log("no test");
         }
     
         // if (emailInput == ' ' || emailInput == null){
