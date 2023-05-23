@@ -1,0 +1,5 @@
+Error message
+    -empty
+    -not long enough
+    -doesnt include all of the correct characters
+        ex: 
