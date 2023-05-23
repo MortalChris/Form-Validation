@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
                 const pErrorText = document.createElement("p");
                         pErrorText.className = "pErrorText";
-                        pErrorText.textContent = element.id + " is not entered!";
+                        pErrorText.textContent = "The " + element.id + " you entered is not valid!";
                         pErrorText.style.color = "red";
                         element.style.borderColor = "red";
                 const parentElement = element.parentElement;
