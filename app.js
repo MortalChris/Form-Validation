@@ -12,27 +12,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function formValidation() {
                 const usernameInput = username.value.trim();
-                        if (usernameInput === "" || usernameInput === null) {
-                        setError(username);
-                        }else{
-                                setSuccess(username);
-                        }
-
                 const emailInput = email.value.trim();
-                        if (emailInput === "" || emailInput === null) {
-                        setError(email);
-                        }else{
-                                setSuccess(email);
-                        }
-
                 const phoneNumberInput = phoneNumber.value.trim();
-                        if (phoneNumberInput === "" || phoneNumberInput === null) {
-                        setError(phoneNumber);
-                        } else{
-                                setSuccess(phoneNumber);
-                        }
+
+                if (usernameInput === "" || usernameInput === null) {
+                        setError(username);
+                } else{
+                        setSuccess(username);
                 }
 
+
+                if (emailInput === "" || emailInput === null) {
+                        setError(email);
+                } else if(!emailValid(emailInput)){
+                        email.style.borderColor = "purple";
+                } else{
+                        setSuccess(email);
+                }
+
+
+                if (phoneNumberInput === "" || phoneNumberInput === null) {
+                        setError(phoneNumber);
+                } else{
+                        setSuccess(phoneNumber);
+                }
+        }
+
+        function emailValid(emailInput){
+                const emailCharacters = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return emailCharacters.test(String(emailInput).toLowerCase());
+        }
 
 
         function setError(element){
@@ -48,9 +57,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         function setSuccess(element){
-                removeSetError();
+                removeSetError(element);
                 console.log("im being called");
-                element.style.borderColor = "green";
+                element.style.borderColor = "rgb(0, 255, 0)";
         }
 
         function removeSetError(element){
