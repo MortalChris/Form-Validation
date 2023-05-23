@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
         function setError(element){
-                removesetError(element);
+                removeSetError(element);
         
                 const pErrorText = document.createElement("p");
                         pErrorText.className = "pErrorText";
@@ -48,12 +48,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         function setSuccess(element){
-                removesetError();
+                removeSetError();
                 console.log("im being called");
                 element.style.borderColor = "green";
         }
 
-        function removesetError(element){
+        function removeSetError(element){
                 const currentsetError = element.parentElement.querySelectorAll(".pErrorText");
                 for(let i = 0; i < currentsetError.length; i++){
                         currentsetError[i].remove();
