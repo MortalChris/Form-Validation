@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (emailInput === "" || emailInput === null) {
                         setError(email);
                 } else if(!emailValid(emailInput)){
-                        email.style.borderColor = "purple";
+                        setError(email);
                 } else{
                         setSuccess(email);
                 }
